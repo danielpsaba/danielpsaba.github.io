@@ -43,41 +43,34 @@
       border-bottom: 1px solid var(--rule);
     }
  
-    .hero {
+     .hero {
       display: grid;
       grid-template-columns: 1fr auto;
-      gap: 3rem;
-      align-items: end;
+      grid-template-rows: auto auto;
+      gap: 1.5rem 3rem;
+      align-items: start;
     }
  
-    .hero-text .eyebrow {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.75rem;
-      font-weight: 300;
-      color: var(--accent);
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      margin-bottom: 0.75rem;
+    .hero-text {
+      grid-column: 1;
+      grid-row: 1;
     }
- 
-    .hero-text h1 {
-      font-family: 'DM Serif Display', Georgia, serif;
-      font-size: 1.15rem;
-      font-weight: 300;
-      line-height: 1.1;
-      letter-spacing: -0.01em;
-      margin-bottom: 0.5rem;
+
+    .hero-photo {
+      grid-column: 2;
+      grid-row: 1;
     }
- 
+
     .tagline {
-      font-family: 'DM Serif Display', Georgia, serif;
-      font-size: clamp(2.1rem, 5vw, 2.4rem) !important;
       grid-column: 1 / -1;
+      grid-row: 2;
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: clamp(2.1rem, 5vw, 2.4rem);
       font-weight: 300;
       font-style: italic;
       color: var(--warm-gray);
-      margin-bottom: 1.2rem;
       line-height: 1.5;
+      margin-bottom: 0;
     }
  
     .hero-text p {
@@ -441,8 +434,8 @@
           <a class="link-pill" href="https://linkedin.com/in/danielpsaba" target="_blank">Connect on LinkedIn</a>
         </div>
       </div>
-      <p class="tagline">At the intersection of human psychology, intelligent systems, and enterprise strategy.</p>
       <img class="hero-photo" src="GitHub.png" alt="Daniel Saba" />
+      <p class="tagline">At the intersection of human psychology, intelligent systems, and enterprise strategy.</p>
     </div>
   </header>
  
