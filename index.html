@@ -4,10 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Daniel P. Saba</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Mono:wght@300;400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
+ 
     :root {
       --cream:        #f8f5f0;
       --ink:          #1a1612;
@@ -17,18 +17,18 @@
       --rule:         #d8d0c5;
       --card-bg:      #fdfaf7;
     }
-
+ 
     html { scroll-behavior: smooth; }
-
+ 
     body {
-      font-family: 'DM Sans', sans-serif;
+      font-family: 'Inter', sans-serif;
       background: var(--cream);
       color: var(--ink);
       min-height: 100vh;
       display: flex;
       flex-direction: column;
     }
-
+ 
     /* ── LAYOUT ── */
     .page {
       max-width: 780px;
@@ -36,22 +36,22 @@
       padding: 0 2rem;
       width: 100%;
     }
-
+ 
     /* ── HEADER / HERO ── */
     header {
       padding: 5rem 0 3rem;
       border-bottom: 1px solid var(--rule);
     }
-
+ 
     .hero {
       display: grid;
       grid-template-columns: 1fr auto;
       gap: 3rem;
       align-items: end;
     }
-
+ 
     .hero-text .eyebrow {
-      font-family: 'DM Mono', monospace;
+      font-family: 'Inter', sans-serif;
       font-size: 0.75rem;
       font-weight: 300;
       color: var(--accent);
@@ -59,34 +59,35 @@
       text-transform: uppercase;
       margin-bottom: 0.75rem;
     }
-
+ 
     .hero-text h1 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2.4rem, 5vw, 3.6rem);
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 1.15rem;
       font-weight: 300;
       line-height: 1.1;
       letter-spacing: -0.01em;
       margin-bottom: 0.5rem;
     }
-
+ 
     .hero-text .tagline {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.15rem;
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: clamp(2.4rem, 5vw, 3.6rem);
       font-weight: 300;
       font-style: italic;
       color: var(--warm-gray);
       margin-bottom: 1.2rem;
       line-height: 1.5;
     }
-
+ 
     .hero-text p {
+      font-family: 'Inter', sans-serif;
       font-size: 0.97rem;
       font-weight: 300;
       line-height: 1.8;
       color: var(--warm-gray);
       max-width: 500px;
     }
-
+ 
     .hero-photo {
       width: 180px;
       height: 180px;
@@ -95,7 +96,7 @@
       border: 3px solid var(--rule);
       flex-shrink: 0;
     }
-
+ 
     /* ── LINK PILLS ── */
     .link-row {
       display: flex;
@@ -103,9 +104,9 @@
       flex-wrap: wrap;
       margin-top: 1.4rem;
     }
-
+ 
     .link-pill {
-      font-family: 'DM Mono', monospace;
+      font-family: 'Inter', sans-serif;
       font-size: 0.7rem;
       letter-spacing: 0.08em;
       text-transform: uppercase;
@@ -115,38 +116,38 @@
       border: 1px solid var(--ink);
       transition: background 0.2s, color 0.2s;
     }
-
+ 
     .link-pill:hover {
       background: var(--ink);
       color: var(--cream);
     }
-
+ 
     .link-pill.accent {
       background: var(--accent);
       color: var(--cream);
       border-color: var(--accent);
     }
-
+ 
     .link-pill.accent:hover {
       background: #6b3520;
       border-color: #6b3520;
     }
-
+ 
     /* ── NAV ── */
     nav {
       padding: 1.5rem 0;
       border-bottom: 1px solid var(--rule);
     }
-
+ 
     nav ul {
       list-style: none;
       display: flex;
       justify-content: center;
       gap: 3rem;
     }
-
+ 
     nav a {
-      font-family: 'DM Mono', monospace;
+      font-family: 'Inter', sans-serif;
       font-size: 0.72rem;
       letter-spacing: 0.1em;
       text-transform: uppercase;
@@ -154,40 +155,41 @@
       text-decoration: none;
       transition: color 0.2s;
     }
-
+ 
     nav a:hover { color: var(--accent); }
-
+ 
     /* ── SECTIONS ── */
     section {
       padding: 3.5rem 0;
       border-bottom: 1px solid var(--rule);
     }
-
+ 
     section:last-of-type { border-bottom: none; }
-
+ 
     .section-label {
-      font-family: 'DM Mono', monospace;
+      font-family: 'Inter', sans-serif;
       font-size: 0.68rem;
       letter-spacing: 0.15em;
       text-transform: uppercase;
       color: var(--accent-light);
       margin-bottom: 1.6rem;
     }
-
+ 
     /* ── ABOUT ── */
     #about p {
+      font-family: 'Inter', sans-serif;
       font-size: 1rem;
       line-height: 1.85;
       font-weight: 300;
       color: #3a3530;
       margin-bottom: 1rem;
     }
-
+ 
     #about p:last-child { margin-bottom: 0; }
-
+ 
     /* ── CASE STUDIES ── */
     .case-list { display: flex; flex-direction: column; gap: 1.5rem; }
-
+ 
     .case-card {
       background: var(--card-bg);
       border: 1px solid var(--rule);
@@ -195,39 +197,39 @@
       padding: 1.6rem 1.8rem;
       transition: border-left-color 0.2s;
     }
-
+ 
     .case-card:hover { border-left-color: var(--accent); }
-
+ 
     .case-meta {
       display: flex;
       align-items: center;
       gap: 1rem;
       margin-bottom: 0.5rem;
     }
-
+ 
     .case-number {
-      font-family: 'DM Mono', monospace;
+      font-family: 'Inter', sans-serif;
       font-size: 0.65rem;
       color: var(--accent-light);
       letter-spacing: 0.08em;
     }
-
+ 
     .case-context {
-      font-family: 'DM Mono', monospace;
+      font-family: 'Inter', sans-serif;
       font-size: 0.65rem;
       color: var(--warm-gray);
       letter-spacing: 0.06em;
     }
-
+ 
     .case-card h3 {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'DM Serif Display', Georgia, serif;
       font-size: 1.2rem;
-      font-weight: 500;
+      font-weight: 400;
       margin-bottom: 1rem;
     }
-
+ 
     .case-block-label {
-      font-family: 'DM Mono', monospace;
+      font-family: 'Inter', sans-serif;
       font-size: 0.65rem;
       letter-spacing: 0.1em;
       text-transform: uppercase;
@@ -235,64 +237,68 @@
       margin-bottom: 0.4rem;
       margin-top: 0.9rem;
     }
-
+ 
     .case-card p {
+      font-family: 'Inter', sans-serif;
       font-size: 0.9rem;
       font-weight: 300;
       line-height: 1.75;
       color: var(--warm-gray);
     }
-
+ 
     .case-impact {
       margin-top: 1rem;
       padding: 0.9rem 1.1rem;
       background: var(--cream);
       border-left: 2px solid var(--accent-light);
+      font-family: 'Inter', sans-serif;
       font-size: 0.88rem;
       font-weight: 300;
       line-height: 1.75;
       color: var(--warm-gray);
     }
-
+ 
     /* ── EXPERIENCE ── */
     .exp-list { display: flex; flex-direction: column; gap: 1.2rem; }
-
+ 
     .exp-item {
       display: grid;
       grid-template-columns: 140px 1fr;
       gap: 1rem;
     }
-
+ 
     .exp-year {
-      font-family: 'DM Mono', monospace;
+      font-family: 'Inter', sans-serif;
       font-size: 0.72rem;
       color: var(--warm-gray);
       padding-top: 0.15rem;
       line-height: 1.5;
     }
-
+ 
     .exp-body h4 {
+      font-family: 'Inter', sans-serif;
       font-size: 0.95rem;
       font-weight: 500;
       margin-bottom: 0.15rem;
     }
-
+ 
     .exp-body .exp-org {
-      font-family: 'DM Mono', monospace;
+      font-family: 'Inter', sans-serif;
       font-size: 0.68rem;
       color: var(--accent);
       letter-spacing: 0.05em;
       margin-bottom: 0.6rem;
     }
-
+ 
     .exp-bullets {
       list-style: none;
       display: flex;
       flex-direction: column;
       gap: 0.4rem;
     }
-
+ 
     .exp-bullets li {
+      font-family: 'Inter', sans-serif;
       font-size: 0.88rem;
       font-weight: 300;
       line-height: 1.7;
@@ -300,23 +306,23 @@
       padding-left: 1rem;
       position: relative;
     }
-
+ 
     .exp-bullets li::before {
       content: '–';
       position: absolute;
       left: 0;
       color: var(--accent-light);
     }
-
+ 
     /* ── SKILLS ── */
     .skills-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 2rem;
     }
-
+ 
     .skill-group-label {
-      font-family: 'DM Mono', monospace;
+      font-family: 'Inter', sans-serif;
       font-size: 0.68rem;
       letter-spacing: 0.1em;
       text-transform: uppercase;
@@ -325,79 +331,81 @@
       padding-bottom: 0.4rem;
       margin-bottom: 0.8rem;
     }
-
+ 
     .skill-list {
       list-style: none;
       display: flex;
       flex-direction: column;
       gap: 0.35rem;
     }
-
+ 
     .skill-list li {
+      font-family: 'Inter', sans-serif;
       font-size: 0.88rem;
       font-weight: 300;
       color: var(--warm-gray);
       line-height: 1.5;
     }
-
+ 
     /* ── CONTACT ── */
     #contact p {
+      font-family: 'Inter', sans-serif;
       font-size: 0.95rem;
       font-weight: 300;
       line-height: 1.8;
       color: var(--warm-gray);
       margin-bottom: 1.2rem;
     }
-
+ 
     .contact-email {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'DM Serif Display', Georgia, serif;
       font-size: 1.3rem;
       color: var(--ink);
       text-decoration: none;
       border-bottom: 1px solid var(--accent-light);
       transition: border-color 0.2s;
     }
-
+ 
     .contact-email:hover { border-color: var(--accent); }
-
+ 
     .contact-meta {
-      font-family: 'DM Mono', monospace;
+      font-family: 'Inter', sans-serif;
       font-size: 0.68rem;
       color: var(--warm-gray);
       letter-spacing: 0.06em;
       margin-top: 0.75rem;
     }
-
+ 
     /* ── FOOTER ── */
     footer {
       padding: 2rem 0;
       text-align: center;
     }
-
+ 
     footer p {
-      font-family: 'DM Mono', monospace;
+      font-family: 'Inter', sans-serif;
       font-size: 0.65rem;
       letter-spacing: 0.08em;
       color: var(--warm-gray);
     }
-
+ 
     /* ── FADE IN ── */
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(18px); }
       to   { opacity: 1; transform: translateY(0); }
     }
-
+ 
     header, nav, section {
       animation: fadeUp 0.6s ease both;
     }
-
+ 
     nav            { animation-delay: 0.1s; }
     #about         { animation-delay: 0.15s; }
     #case-studies  { animation-delay: 0.2s; }
     #experience    { animation-delay: 0.22s; }
     #skills        { animation-delay: 0.25s; }
     #contact       { animation-delay: 0.3s; }
-
+ 
     /* ── RESPONSIVE ── */
     @media (max-width: 540px) {
       .hero { grid-template-columns: 1fr; }
@@ -405,16 +413,16 @@
       .exp-item { grid-template-columns: 1fr; gap: 0.2rem; }
       .skills-grid { grid-template-columns: 1fr; }
     }
-
+ 
     @media (prefers-reduced-motion: reduce) {
       * { animation: none !important; transition: none !important; }
     }
   </style>
 </head>
 <body>
-
+ 
 <div class="page">
-
+ 
   <!-- HEADER -->
   <header>
     <div class="hero">
@@ -436,7 +444,7 @@
       <img class="hero-photo" src="GitHub.png" alt="Daniel Saba" />
     </div>
   </header>
-
+ 
   <!-- NAV -->
   <nav>
     <ul>
@@ -447,7 +455,7 @@
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
-
+ 
   <!-- ABOUT -->
   <section id="about">
     <div class="section-label">About</div>
@@ -459,87 +467,87 @@
     </p>
     <p>
       My work sits at the intersection of human behavior and intelligent systems,
-      whether that means diagnosing how customers adopt and build trust in a 
-      product or how employees integrate generative AI into their daily workflows. 
-      Using mixed-methods research architectures grounded in behavioral science, 
-      I surface the psychological barriers and adoption gaps that standard usability 
-      testing and leadership intuition may overlook. The output is the same in 
-      either context: structured behavioral evidence that translates into validated 
-      design recommendations, deployment strategies, and training models that 
+      whether that means diagnosing how customers adopt and build trust in a
+      product or how employees integrate generative AI into their daily workflows.
+      Using mixed-methods research architectures grounded in behavioral science,
+      I surface the psychological barriers and adoption gaps that standard usability
+      testing and leadership intuition may overlook. The output is the same in
+      either context: structured behavioral evidence that translates into validated
+      design recommendations, deployment strategies, and training models that
       protect technical investment and accelerate human-technology integration.
     </p>
   </section>
-
+ 
   <!-- CASE STUDIES -->
   <section id="case-studies">
     <div class="section-label">Selected Case Studies</div>
     <div class="case-list">
-
+ 
       <div class="case-card">
         <div class="case-meta">
           <span class="case-number">01 / 03</span>
           <span class="case-context">Multidisciplinary AI Evaluation Framework</span>
         </div>
         <h3>Human-Centered AI Frameworks</h3>
-
+ 
         <div class="case-block-label">The Business Challenge</div>
         <p>Designers of conversational agents and social robots often build features for short-term engagement that inadvertently trigger user dependency, algorithmic deception, or system adoption friction.</p>
-
+ 
         <div class="case-block-label">Methodology &amp; Ownership</div>
         <p>Co-led a Qualitative Evidence Synthesis evaluating 96 design guidelines across 18 core human-computer interaction vectors. Engineered a dual-axis evaluative framework to isolate design traits that support real-world human connection versus those introducing relational risk. Managed data hygiene and rater calibration by calculating Fleiss' Kappa (κ = 0.917; κ = 0.896) and pairwise Cohen's Kappa, achieving over 90% exact agreement across the evaluation team.</p>
-
+ 
         <div class="case-impact">
-          <strong style="font-family:'DM Mono',monospace;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:0.35rem;">Systemic Impact</strong>
+          <strong style="font-family:'Inter',sans-serif;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:0.35rem;">Systemic Impact</strong>
           Delivered an enterprise risk matrix distinguishing technologies acting as "conversational catalysts" from "deceptive substitutes." This protocol allows engineering and product teams to evaluate automated communication features against clear trust compliance benchmarks before launch.
         </div>
       </div>
-
+ 
       <div class="case-card">
         <div class="case-meta">
           <span class="case-number">02 / 03</span>
           <span class="case-context">Randomized Controlled Behavioral Study</span>
         </div>
         <h3>Quantitative Behavioral Analytics</h3>
-
+ 
         <div class="case-block-label">The Business Challenge</div>
         <p>Digital environments and generative tools often induce user anxiety, cognitive fatigue, and negative self-evaluation, resulting in platform friction and user churn.</p>
-
+ 
         <div class="case-block-label">Methodology &amp; Ownership</div>
         <p>Designed and executed a multi-arm randomized controlled experiment (N=60) analyzing user behavioral output under varied cognitive conditions. Built a customized qualitative coding matrix to process unstructured user text data, extracting explicit linguistic variables (self-referents, descriptive terms, and emotional states). Conducted inferential modeling to isolate a substantial behavioral intervention effect size (d = .90) directly linked to predictive baseline traits (r = .48).</p>
-
+ 
         <div class="case-impact">
-          <strong style="font-family:'DM Mono',monospace;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:0.35rem;">Systemic Impact</strong>
+          <strong style="font-family:'Inter',sans-serif;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:0.35rem;">Systemic Impact</strong>
           Translated findings into a "Smart Friction" feature recommendation for digital platforms. Proved that injecting targeted reflection touchpoints prior to user output generation mitigates interaction anxiety, optimizes user sentiment, and enhances platform engagement metrics.
         </div>
       </div>
-
+ 
       <div class="case-card">
         <div class="case-meta">
           <span class="case-number">03 / 03</span>
           <span class="case-context">Multimodal AI Laboratory, Applied AI Solutions</span>
         </div>
         <h3>Human-AI Trust and Feedback Optimization</h3>
-
+ 
         <div class="case-block-label">The Business Challenge</div>
         <p>Deploying AI-driven feedback loops to train professionals requires systems that generate assessments users find credible, motivating, and behaviorally accurate.</p>
-
+ 
         <div class="case-block-label">Methodology &amp; Ownership</div>
         <p>Defined comprehensive construct validity frameworks to identify and track behavioral markers (active listening, empathetic tone, communication pacing) for computational modeling. Synthesized simulation-based learning and human-factors literature to optimize user flow, specifically accounting for psychological boundary variables including cognitive load and emotional arousal.</p>
-
+ 
         <div class="case-impact">
-          <strong style="font-family:'DM Mono',monospace;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:0.35rem;">Systemic Impact</strong>
+          <strong style="font-family:'Inter',sans-serif;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:0.35rem;">Systemic Impact</strong>
           Structured a "Learn → Practice → AI Feedback" training architecture. This framework directly informed engineering requirements for automated report generation, ensuring AI-delivered insights are actionable and designed to drive successful user skill acquisition.
         </div>
       </div>
-
+ 
     </div>
   </section>
-
+ 
   <!-- EXPERIENCE -->
   <section id="experience">
     <div class="section-label">Enterprise Experience &amp; Professional History</div>
     <div class="exp-list">
-
+ 
       <div class="exp-item">
         <div class="exp-year">Aug 2024 – Present</div>
         <div class="exp-body">
@@ -551,7 +559,7 @@
           </ul>
         </div>
       </div>
-
+ 
       <div class="exp-item">
         <div class="exp-year">Jun 2025 – Present</div>
         <div class="exp-body">
@@ -563,7 +571,7 @@
           </ul>
         </div>
       </div>
-
+ 
       <div class="exp-item">
         <div class="exp-year">May 2020 – Feb 2024</div>
         <div class="exp-body">
@@ -576,15 +584,15 @@
           </ul>
         </div>
       </div>
-
+ 
     </div>
   </section>
-
+ 
   <!-- SKILLS -->
   <section id="skills">
     <div class="section-label">Core Competencies &amp; Technical Stack</div>
     <div class="skills-grid">
-
+ 
       <div>
         <div class="skill-group-label">Research Methodologies</div>
         <ul class="skill-list">
@@ -595,7 +603,7 @@
           <li>Survey Engineering</li>
         </ul>
       </div>
-
+ 
       <div>
         <div class="skill-group-label">Statistical Frameworks &amp; Analytics</div>
         <ul class="skill-list">
@@ -605,7 +613,7 @@
           <li>Linguistic &amp; Qualitative Data Coding</li>
         </ul>
       </div>
-
+ 
       <div>
         <div class="skill-group-label">Tools &amp; Platforms</div>
         <ul class="skill-list">
@@ -613,10 +621,10 @@
           <li>Domo</li>
           <li>Qualtrics</li>
           <li>Advanced Excel</li>
-          <li>Pythin, R</li>
+          <li>Python, R</li>
         </ul>
       </div>
-
+ 
       <div>
         <div class="skill-group-label">Languages</div>
         <ul class="skill-list">
@@ -624,23 +632,23 @@
           <li>Spanish (Native)</li>
         </ul>
       </div>
-
+ 
     </div>
   </section>
-
+ 
   <!-- CONTACT -->
   <section id="contact">
     <div class="section-label">Contact</div>
-    <p>
+    </p>
     <a class="contact-email" href="mailto:SabaD@cua.edu">SabaD@cua.edu</a>
-    <p class="contact-meta">Washington, D.C. &nbsp;·&nbsp; Available for targeted cross-functional consulting</p>
+    <p class="contact-meta">Washington, D.C.</p>
   </section>
-
+ 
   <!-- FOOTER -->
   <footer>
     <p>Daniel P. Saba &copy; 2026 &nbsp;·&nbsp; Washington, DC</p>
   </footer>
-
+ 
 </div>
 </body>
 </html>
