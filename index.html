@@ -3,28 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Daniel Saba</title>
+  <title>Daniel P. Saba</title>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Mono:wght@300;400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    #about a {
-      color: var(--accent);
-      text-decoration: underline;
-    }
-
-    #about a:hover {
-      color: var(--accent-light);
-    }
-    
     :root {
-      --cream: #f8f5f0;
-      --ink: #1a1612;
-      --warm-gray: #7a7068;
-      --accent: #8b4a2f;
+      --cream:        #f8f5f0;
+      --ink:          #1a1612;
+      --warm-gray:    #7a7068;
+      --accent:       #8b4a2f;
       --accent-light: #c4896a;
-      --rule: #d8d0c5;
-      --card-bg: #fdfaf7;
+      --rule:         #d8d0c5;
+      --card-bg:      #fdfaf7;
     }
 
     html { scroll-behavior: smooth; }
@@ -59,6 +50,16 @@
       align-items: end;
     }
 
+    .hero-text .eyebrow {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.75rem;
+      font-weight: 300;
+      color: var(--accent);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+
     .hero-text h1 {
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(2.4rem, 5vw, 3.6rem);
@@ -68,22 +69,22 @@
       margin-bottom: 0.5rem;
     }
 
-    .hero-text .title {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.75rem;
+    .hero-text .tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
       font-weight: 300;
-      color: var(--accent);
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      margin-bottom: 1.4rem;
+      font-style: italic;
+      color: var(--warm-gray);
+      margin-bottom: 1.2rem;
+      line-height: 1.5;
     }
 
     .hero-text p {
-      font-size: 1rem;
+      font-size: 0.97rem;
       font-weight: 300;
-      line-height: 1.75;
+      line-height: 1.8;
       color: var(--warm-gray);
-      max-width: 480px;
+      max-width: 500px;
     }
 
     .hero-photo {
@@ -93,15 +94,42 @@
       object-fit: cover;
       border: 3px solid var(--rule);
       flex-shrink: 0;
-      /* placeholder gradient until real photo is added */
-      background: linear-gradient(135deg, #d4b896 0%, #a87c5a 100%);
+    }
+
+    /* ── LINK PILLS ── */
+    .link-row {
       display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 2.5rem;
-      color: white;
-      font-weight: 300;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+      margin-top: 1.4rem;
+    }
+
+    .link-pill {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink);
+      text-decoration: none;
+      padding: 0.45rem 1rem;
+      border: 1px solid var(--ink);
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .link-pill:hover {
+      background: var(--ink);
+      color: var(--cream);
+    }
+
+    .link-pill.accent {
+      background: var(--accent);
+      color: var(--cream);
+      border-color: var(--accent);
+    }
+
+    .link-pill.accent:hover {
+      background: #6b3520;
+      border-color: #6b3520;
     }
 
     /* ── NAV ── */
@@ -113,9 +141,8 @@
     nav ul {
       list-style: none;
       display: flex;
-      gap: 2rem;
       justify-content: center;
-      gap: 4rem;
+      gap: 3rem;
     }
 
     nav a {
@@ -158,104 +185,159 @@
 
     #about p:last-child { margin-bottom: 0; }
 
-    /* ── RESEARCH ── */
-    .research-list { display: flex; flex-direction: column; gap: 1.5rem; }
+    /* ── CASE STUDIES ── */
+    .case-list { display: flex; flex-direction: column; gap: 1.5rem; }
 
-    .research-item {
+    .case-card {
       background: var(--card-bg);
       border: 1px solid var(--rule);
       border-left: 3px solid var(--accent-light);
-      padding: 1.4rem 1.6rem;
+      padding: 1.6rem 1.8rem;
       transition: border-left-color 0.2s;
     }
 
-    .research-item:hover { border-left-color: var(--accent); }
+    .case-card:hover { border-left-color: var(--accent); }
 
-    .research-item h3 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.15rem;
-      font-weight: 500;
-      margin-bottom: 0.3rem;
+    .case-meta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 0.5rem;
     }
 
-    .research-item .collab {
+    .case-number {
       font-family: 'DM Mono', monospace;
-      font-size: 0.68rem;
-      color: var(--accent);
-      letter-spacing: 0.06em;
-      margin-bottom: 0.6rem;
+      font-size: 0.65rem;
+      color: var(--accent-light);
+      letter-spacing: 0.08em;
     }
 
-    .research-item p {
+    .case-context {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.65rem;
+      color: var(--warm-gray);
+      letter-spacing: 0.06em;
+    }
+
+    .case-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 500;
+      margin-bottom: 1rem;
+    }
+
+    .case-block-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.4rem;
+      margin-top: 0.9rem;
+    }
+
+    .case-card p {
       font-size: 0.9rem;
       font-weight: 300;
-      line-height: 1.7;
+      line-height: 1.75;
       color: var(--warm-gray);
     }
 
-    /* ── EDUCATION / CV ITEMS ── */
-    .cv-list { display: flex; flex-direction: column; gap: 1.2rem; }
+    .case-impact {
+      margin-top: 1rem;
+      padding: 0.9rem 1.1rem;
+      background: var(--cream);
+      border-left: 2px solid var(--accent-light);
+      font-size: 0.88rem;
+      font-weight: 300;
+      line-height: 1.75;
+      color: var(--warm-gray);
+    }
 
-    .cv-item {
+    /* ── EXPERIENCE ── */
+    .exp-list { display: flex; flex-direction: column; gap: 1.2rem; }
+
+    .exp-item {
       display: grid;
-      grid-template-columns: 110px 1fr;
+      grid-template-columns: 140px 1fr;
       gap: 1rem;
     }
 
-    .cv-year {
+    .exp-year {
       font-family: 'DM Mono', monospace;
       font-size: 0.72rem;
       color: var(--warm-gray);
       padding-top: 0.15rem;
+      line-height: 1.5;
     }
 
-    .cv-body h4 {
+    .exp-body h4 {
       font-size: 0.95rem;
       font-weight: 500;
       margin-bottom: 0.15rem;
     }
 
-    .cv-body p {
-      font-size: 0.85rem;
+    .exp-body .exp-org {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.68rem;
+      color: var(--accent);
+      letter-spacing: 0.05em;
+      margin-bottom: 0.6rem;
+    }
+
+    .exp-bullets {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .exp-bullets li {
+      font-size: 0.88rem;
+      font-weight: 300;
+      line-height: 1.7;
+      color: var(--warm-gray);
+      padding-left: 1rem;
+      position: relative;
+    }
+
+    .exp-bullets li::before {
+      content: '–';
+      position: absolute;
+      left: 0;
+      color: var(--accent-light);
+    }
+
+    /* ── SKILLS ── */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    .skill-group-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      border-bottom: 1px solid var(--rule);
+      padding-bottom: 0.4rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .skill-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .skill-list li {
+      font-size: 0.88rem;
       font-weight: 300;
       color: var(--warm-gray);
       line-height: 1.5;
-    }
-
-    /* ── LINKS ── */
-    .link-row {
-      display: flex;
-      gap: 1.2rem;
-      flex-wrap: wrap;
-      margin-top: 1.2rem;
-    }
-
-    .link-pill {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.7rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--ink);
-      text-decoration: none;
-      padding: 0.45rem 1rem;
-      border: 1px solid var(--ink);
-      transition: background 0.2s, color 0.2s;
-    }
-
-    .link-pill:hover {
-      background: var(--ink);
-      color: var(--cream);
-    }
-
-    .link-pill.accent {
-      background: var(--accent);
-      color: var(--cream);
-      border-color: var(--accent);
-    }
-
-    .link-pill.accent:hover {
-      background: #6b3520;
-      border-color: #6b3520;
     }
 
     /* ── CONTACT ── */
@@ -277,6 +359,14 @@
     }
 
     .contact-email:hover { border-color: var(--accent); }
+
+    .contact-meta {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.68rem;
+      color: var(--warm-gray);
+      letter-spacing: 0.06em;
+      margin-top: 0.75rem;
+    }
 
     /* ── FOOTER ── */
     footer {
@@ -301,18 +391,23 @@
       animation: fadeUp 0.6s ease both;
     }
 
-    nav  { animation-delay: 0.1s; }
-    #about   { animation-delay: 0.15s; }
-    #research { animation-delay: 0.2s; }
-    #cv      { animation-delay: 0.25s; }
-    #contact { animation-delay: 0.3s; }
+    nav            { animation-delay: 0.1s; }
+    #about         { animation-delay: 0.15s; }
+    #case-studies  { animation-delay: 0.2s; }
+    #experience    { animation-delay: 0.22s; }
+    #skills        { animation-delay: 0.25s; }
+    #contact       { animation-delay: 0.3s; }
 
     /* ── RESPONSIVE ── */
     @media (max-width: 540px) {
       .hero { grid-template-columns: 1fr; }
-      .hero-photo { width: 90px; height: 90px; font-size: 1.8rem; order: -1; }
-      .cv-item { grid-template-columns: 1fr; gap: 0.2rem; }
-      .cv-year { font-size: 0.65rem; }
+      .hero-photo { width: 90px; height: 90px; order: -1; }
+      .exp-item { grid-template-columns: 1fr; gap: 0.2rem; }
+      .skills-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; transition: none !important; }
     }
   </style>
 </head>
@@ -324,21 +419,20 @@
   <header>
     <div class="hero">
       <div class="hero-text">
-        <div class="title"> Psychology Researcher · Washington, DC</div>
-        <h1>Daniel Saba</h1>
+        <div class="eyebrow">Behavioral Scientist &amp; Human-Centered AI Researcher</div>
+        <h1>Daniel P. Saba</h1>
+        <p class="tagline">At the intersection of human psychology, intelligent systems, and enterprise strategy.</p>
         <p>
-          I research how people perceive, respond to, and relate to AI - 
-          and whether the design of these systems supports genuine human connection.
-          My work draws on behavioral science to bridge the gap between what AI systems 
-          do and what those actions actually mean for real relationships.
+          I translate complex human behavioral patterns into actionable digital strategy, system optimization,
+          and change enablement. By combining rigorous experimental design, multi-rater data cleaning, and
+          mixed-methods research, I help organizations de-risk AI adoption, build user trust, and optimize
+          human-AI workflows.
         </p>
         <div class="link-row">
-          <a class="link-pill accent" href="#contact">Get in touch</a>
-          <a class="link-pill" href="cv.pdf" target="_blank">Curriculum Vitae</a>
-          <a class="link-pill" href="https://linkedin.com/in/danielpsaba" target="_blank">LinkedIn</a>
+          <a class="link-pill accent" href="cv.pdf" target="_blank">Download Corporate CV</a>
+          <a class="link-pill" href="https://linkedin.com/in/danielpsaba" target="_blank">Connect on LinkedIn</a>
         </div>
       </div>
-      <!-- Replace this div with an <img> tag once you have a photo -->
       <img class="hero-photo" src="GitHub.png" alt="Daniel Saba" />
     </div>
   </header>
@@ -347,8 +441,9 @@
   <nav>
     <ul>
       <li><a href="#about">About</a></li>
-      <li><a href="#research">Research</a></li>
-      <li><a href="#cv">Education</a></li>
+      <li><a href="#case-studies">Case Studies</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
@@ -357,112 +452,172 @@
   <section id="about">
     <div class="section-label">About</div>
     <p>
-      I am a researcher at The Catholic University of America (CUA) in Washington, DC. My work sits 
-      at the intersection of psychology, AI, and mental health, translating behavioral science into 
-      ethical, human-centered technology solutions. My primary focus is ensuring AI systems are 
-      designed around human needs and mitigate potential harms rather than amplify them.
+      I am a Mixed-Methods Behavioral Researcher specializing in how humans interact with, adopt, and trust
+      automated systems. My background spans four years of corporate operations at a Fortune 25 enterprise
+      (Elevance Health) and advanced graduate training in psychological statistics, experimental design, and
+      machine learning evaluation workflows.
     </p>
     <p>
-      I collaborate with Dr. Brendan Rich at the 
-      <a href="https://sites.google.com/cua.edu/cablab" target="_blank">Child Cognition, Affect, and Behavior Laboratory</a> 
-      and Dr. Hanseok Ko at the 
-      <a href="https://sites.google.com/cua.edu/mail/home" target="_blank">Multimodal AI Laboratory</a>, with
-      research centered on applied AI safety questions.
+      My work addresses a critical challenge in the technology landscape: ensuring intelligent applications
+      align with human cognitive thresholds and organizational readiness. Rather than evaluating technology
+      in a vacuum, I design rigorous research methodologies, validate qualitative datasets, and deliver clear,
+      data-driven recommendations to cross-functional stakeholders and executives.
     </p>
-    <p>
   </section>
 
-  <!-- CURRENT PROJECTS -->
-  <section id="research">
-    <div class="section-label">Current Projects</div>
-    <div class="research-list">
+  <!-- CASE STUDIES -->
+  <section id="case-studies">
+    <div class="section-label">Selected Case Studies</div>
+    <div class="case-list">
 
-      <div class="research-item">
-        <h3>Human vs. AI Emotional Support</h3>
-        <div class="collab">CAB Lab · Dr. Brendan Rich</div>
-        <p>
-          I am leading a study examining how emerging adults perceive emotionally supportive messages 
-          when they they originate from AI versus human sources, comparing ratings of helpfulness, 
-          empathy, and felt connectedness across conditions. The study uses a within-subjects 
-          experimental design in which college students evaluate vignette responses generated by an 
-          LLM or written by human peers, alongside self-report measures of depression, social anxiety, 
-          resilience, and perceived social support.
-        </p>
+      <div class="case-card">
+        <div class="case-meta">
+          <span class="case-number">01 / 03</span>
+          <span class="case-context">Multidisciplinary AI Evaluation Framework</span>
+        </div>
+        <h3>Human-Centered AI Frameworks</h3>
+
+        <div class="case-block-label">The Business Challenge</div>
+        <p>Designers of conversational agents and social robots often build features for short-term engagement that inadvertently trigger user dependency, algorithmic deception, or system adoption friction.</p>
+
+        <div class="case-block-label">Methodology &amp; Ownership</div>
+        <p>Co-led a Qualitative Evidence Synthesis evaluating 96 design guidelines across 18 core human-computer interaction vectors. Engineered a dual-axis evaluative framework to isolate design traits that support real-world human connection versus those introducing relational risk. Managed data hygiene and rater calibration by calculating Fleiss' Kappa (κ = 0.917; κ = 0.896) and pairwise Cohen's Kappa, achieving over 90% exact agreement across the evaluation team.</p>
+
+        <div class="case-impact">
+          <strong style="font-family:'DM Mono',monospace;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:0.35rem;">Systemic Impact</strong>
+          Delivered an enterprise risk matrix distinguishing technologies acting as "conversational catalysts" from "deceptive substitutes." This protocol allows engineering and product teams to evaluate automated communication features against clear trust compliance benchmarks before launch.
+        </div>
       </div>
 
-      <div class="research-item">
-        <h3>AI Feedback for Nursing and Therapy</h3>
-        <div class="collab">MAIL Lab · Dr. Hanseok Ko</div>
-        <p>
-          I contribute to the design of an AI system for training future nurses and therapists, 
-          defining what the system should model (active listening, empathetic responding, 
-          appropriate pacing) and designing assessments that capture skill development. I will also 
-          review simulation-based learning literature to inform the design of an immersive VR 
-          training environment, accounting for psychological variables like cognitive load and 
-          emotional arousal.
-        </p>
+      <div class="case-card">
+        <div class="case-meta">
+          <span class="case-number">02 / 03</span>
+          <span class="case-context">Randomized Controlled Behavioral Study</span>
+        </div>
+        <h3>Quantitative Behavioral Analytics</h3>
+
+        <div class="case-block-label">The Business Challenge</div>
+        <p>Digital environments and generative tools often induce user anxiety, cognitive fatigue, and negative self-evaluation, resulting in platform friction and user churn.</p>
+
+        <div class="case-block-label">Methodology &amp; Ownership</div>
+        <p>Designed and executed a multi-arm randomized controlled experiment (N=60) analyzing user behavioral output under varied cognitive conditions. Built a customized qualitative coding matrix to process unstructured user text data, extracting explicit linguistic variables (self-referents, descriptive terms, and emotional states). Conducted inferential modeling to isolate a substantial behavioral intervention effect size (d = .90) directly linked to predictive baseline traits (r = .48).</p>
+
+        <div class="case-impact">
+          <strong style="font-family:'DM Mono',monospace;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:0.35rem;">Systemic Impact</strong>
+          Translated findings into a "Smart Friction" feature recommendation for digital platforms. Proved that injecting targeted reflection touchpoints prior to user output generation mitigates interaction anxiety, optimizes user sentiment, and enhances platform engagement metrics.
+        </div>
       </div>
 
-      <div class="research-item">
-        <h3>Social Robot Design & Human Connection</h3>
-        <div class="collab">Collaborative Research · Dr. Jeffrey Herrmann</div>
-        <p>
-          I am helping conduct a multidisciplinary review of 96 design guidelines extracted from 
-          18 foundational Human-Robot Interaction papers, evaluating each against two focal 
-          objectives: whether robot design actively fosters human-to-human connection, and whether 
-          it risks replacing or undermining existing relationships. The project develops a 
-          structured framework for categorizing and assessing design choices with the goal of 
-          producing actionable guidance for robotics researchers and developers building socially 
-          responsible robots.
-        </p>
+      <div class="case-card">
+        <div class="case-meta">
+          <span class="case-number">03 / 03</span>
+          <span class="case-context">Multimodal AI Laboratory, Applied AI Solutions</span>
+        </div>
+        <h3>Human-AI Trust and Feedback Optimization</h3>
+
+        <div class="case-block-label">The Business Challenge</div>
+        <p>Deploying AI-driven feedback loops to train professionals requires systems that generate assessments users find credible, motivating, and behaviorally accurate.</p>
+
+        <div class="case-block-label">Methodology &amp; Ownership</div>
+        <p>Defined comprehensive construct validity frameworks to identify and track behavioral markers (active listening, empathetic tone, communication pacing) for computational modeling. Synthesized simulation-based learning and human-factors literature to optimize user flow, specifically accounting for psychological boundary variables including cognitive load and emotional arousal.</p>
+
+        <div class="case-impact">
+          <strong style="font-family:'DM Mono',monospace;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:0.35rem;">Systemic Impact</strong>
+          Structured a "Learn → Practice → AI Feedback" training architecture. This framework directly informed engineering requirements for automated report generation, ensuring AI-delivered insights are actionable and designed to drive successful user skill acquisition.
+        </div>
       </div>
 
     </div>
   </section>
 
-  <!-- EDUCATION / CV -->
-  <section id="cv">
-    <div class="section-label">Education & Experience</div>
-    <div class="cv-list">
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="section-label">Enterprise Experience &amp; Professional History</div>
+    <div class="exp-list">
 
-      <div class="cv-item">
-        <div class="cv-year">May 2026 (exp.)</div>
-        <div class="cv-body">
-          <h4>M.A. in Psychological Science</h4>
-          <p>Catholic University of America · Washington, DC</p>
+      <div class="exp-item">
+        <div class="exp-year">Jan 2026 – Present</div>
+        <div class="exp-body">
+          <h4>Graduate Research Assistant</h4>
+          <div class="exp-org">Multimodal AI Lab &amp; Child Cognition Lab · CUA</div>
+          <ul class="exp-bullets">
+            <li>Design experimental protocols, construct validity frameworks, and qualitative coding schemas to optimize human-AI system alignment and validation.</li>
+            <li>Utilize statistical frameworks (Fleiss'/Cohen's Kappa, regression modeling) to ensure data quality and clean unstructured linguistic data for machine learning evaluation workflows.</li>
+          </ul>
         </div>
       </div>
 
-      <div class="cv-item">
-        <div class="cv-year">Jan 2026–present</div>
-        <div class="cv-body">
-          <h4>Graduate Researcher — Multimodal AI Lab</h4>
-          <p>CUA · with Dr. Hanseok Ko</p>
+      <div class="exp-item">
+        <div class="exp-year">Jun 2025 – Present</div>
+        <div class="exp-body">
+          <h4>Administrative Operations &amp; Crisis Specialist</h4>
+          <div class="exp-org">Office of Student Affairs / Crisis Text Line · CUA</div>
+          <ul class="exp-bullets">
+            <li>Manage high-stakes stakeholder interactions, active listening protocols, and swift behavioral de-escalation for individuals experiencing profound psychological distress.</li>
+            <li>Collaborate cross-functionally with senior leadership, mental health professionals, and emergency vectors to execute structured safety plans under compressed timelines.</li>
+          </ul>
         </div>
       </div>
 
-      <div class="cv-item">
-        <div class="cv-year">Aug 2025–present</div>
-        <div class="cv-body">
-          <h4>Graduate Researcher — Child Cognition, Affect, and Behavior Lab</h4>
-          <p>CUA · with Dr. Brendan Rich</p>
+      <div class="exp-item">
+        <div class="exp-year">May 2020 – Feb 2024</div>
+        <div class="exp-body">
+          <h4>Strategic Sourcing Research Analyst</h4>
+          <div class="exp-org">Elevance Health, Inc. (Fortune 25)</div>
+          <ul class="exp-bullets">
+            <li>Extracted, cleaned, and synthesized complex, high-volume datasets across enterprise systems (Domo, Ariba, ChromeRiver) under tight operational deadlines.</li>
+            <li>Conducted comparative analysis and predictive hypothesis testing regarding supplier performance, cost-efficiency, and operational risk mitigation.</li>
+            <li>Designed interactive data visualization dashboards and presented annual strategic reports directly to cross-functional senior executives to drive procurement decisions.</li>
+          </ul>
         </div>
       </div>
 
-      <div class="cv-item">
-        <div class="cv-year">Aug 2024–present</div>
-        <div class="cv-body">
-          <h4>Graduate Researcher — Emotive Communications Lab</h4>
-          <p>CUA · with Dr. Chelsea Kelly</p>
-        </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="section-label">Core Competencies &amp; Technical Stack</div>
+    <div class="skills-grid">
+
+      <div>
+        <div class="skill-group-label">Research Methodologies</div>
+        <ul class="skill-list">
+          <li>Mixed-Methods Research Design</li>
+          <li>Qualitative Evidence Synthesis (QES)</li>
+          <li>Experimental &amp; Quasi-Experimental Architecture</li>
+          <li>Construct Validity Frameworks</li>
+          <li>Survey Engineering</li>
+        </ul>
       </div>
 
-      <div class="cv-item">
-        <div class="cv-year">Aug 2024–Aug 2025</div>
-        <div class="cv-body">
-          <h4>Graduate Researcher — Positive Development Lab</h4>
-          <p>CUA · with Dr. Kathryn Degnan</p>
-        </div>
+      <div>
+        <div class="skill-group-label">Statistical Frameworks &amp; Analytics</div>
+        <ul class="skill-list">
+          <li>Inter-Rater Reliability (Fleiss' κ, Cohen's κ)</li>
+          <li>Linear &amp; Quadratic Regression</li>
+          <li>Sampling &amp; Significance Testing</li>
+          <li>Linguistic &amp; Qualitative Data Coding</li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="skill-group-label">Tools &amp; Platforms</div>
+        <ul class="skill-list">
+          <li>SPSS, JASP, Stata</li>
+          <li>Domo Business Intelligence</li>
+          <li>Qualtrics</li>
+          <li>Advanced Excel</li>
+          <li>Brightspace LMS</li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="skill-group-label">Languages</div>
+        <ul class="skill-list">
+          <li>English (Native)</li>
+          <li>Spanish (Professional Fluency)</li>
+        </ul>
       </div>
 
     </div>
@@ -472,15 +627,17 @@
   <section id="contact">
     <div class="section-label">Contact</div>
     <p>
-      I'm always happy to connect with researchers, collaborators, and anyone working
-      on human-centered AI. Feel free to reach out.
+      I partner with organizations, frontier technology teams, and consulting practices looking to anchor
+      their AI initiatives in empirical behavioral science. Whether you are seeking to optimize human-AI
+      systems, measure user trust, or drive tech adoption across an enterprise, let's connect.
     </p>
     <a class="contact-email" href="mailto:SabaD@cua.edu">SabaD@cua.edu</a>
+    <p class="contact-meta">Washington, D.C. &nbsp;·&nbsp; Available for targeted cross-functional consulting</p>
   </section>
 
   <!-- FOOTER -->
   <footer>
-    <p>Daniel Saba &copy; 2026 &nbsp;·&nbsp; Washington, DC</p>
+    <p>Daniel P. Saba &copy; 2026 &nbsp;·&nbsp; Washington, DC</p>
   </footer>
 
 </div>
