@@ -69,9 +69,10 @@
       margin-bottom: 0.5rem;
     }
  
-    .hero-text .tagline {
+    .tagline {
       font-family: 'DM Serif Display', Georgia, serif;
       font-size: clamp(2.1rem, 5vw, 2.4rem);
+      grid-column: 1 / -1;
       font-weight: 300;
       font-style: italic;
       color: var(--warm-gray);
@@ -426,10 +427,10 @@
   <!-- HEADER -->
   <header>
     <div class="hero">
+      <p class="tagline">At the intersection of human psychology, intelligent systems, and enterprise strategy.</p>
       <div class="hero-text">
         <div class="eyebrow">Behavioral Scientist &amp; Human-Centered AI Researcher</div>
         <h1>Daniel P. Saba</h1>
-        <p class="tagline">At the intersection of human psychology, intelligent systems, and enterprise strategy.</p>
         <p>
           I translate complex human behavioral patterns into actionable digital strategy, system optimization,
           and change enablement. By combining rigorous experimental design, multi-rater data cleaning, and
