@@ -81,7 +81,32 @@
       color: var(--warm-gray);
       max-width: 500px;
     }
- 
+
+    .hero-text h1 {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 1.15rem;
+      font-weight: 400;
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-text .eyebrow {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 400;
+      color: var(--accent);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+
+    
+    .hero-bottom {
+      grid-column: 1 / -1;
+      grid-row: 3;
+    }
+    
     .hero-photo {
       width: 180px;
       height: 180px;
@@ -423,8 +448,11 @@
       <div class="hero-text">
         <div class="eyebrow">Behavioral Scientist &amp; Human-Centered AI Researcher</div>
         <h1>Daniel P. Saba</h1>
-        <p>
-          I translate complex human behavioral patterns into actionable digital strategy, system optimization,
+        </div>
+        <img class="hero-photo" src="GitHub.png" alt="Daniel Saba" />
+        <p class="tagline">At the intersection of human psychology, intelligent systems, and enterprise strategy.</p>
+        <div class="hero-bottom">
+          <p>I translate complex human behavioral patterns into actionable digital strategy, system optimization,
           and change enablement. By combining rigorous experimental design, multi-rater data cleaning, and
           mixed-methods research, I help organizations de-risk AI adoption, build user trust, and optimize
           human-AI workflows.
@@ -434,8 +462,6 @@
           <a class="link-pill" href="https://linkedin.com/in/danielpsaba" target="_blank">Connect on LinkedIn</a>
         </div>
       </div>
-      <img class="hero-photo" src="GitHub.png" alt="Daniel Saba" />
-      <p class="tagline">At the intersection of human psychology, intelligent systems, and enterprise strategy.</p>
     </div>
   </header>
  
